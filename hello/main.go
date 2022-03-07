@@ -9,6 +9,11 @@ func main() {
 	fmt.Print("world with fmt!")
 	fmt.Println("a", 111, true)
 
+	// 書式指定（\n →改行）
+	fmt.Printf("Good morning.\n")
+	// 書式指定（%d →整数, %s →文字列）
+	fmt.Printf("%d...%s\n", 100, "偶数")
+
 	// if
 	x := 2
 	if x == 1 {
