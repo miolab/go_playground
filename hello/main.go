@@ -3,11 +3,11 @@ package main
 import "fmt"
 
 func main() {
-	// println("Hello, world!")
+	println("Hello, world!")
+
 	fmt.Print("Hello, ")
 	fmt.Print("world with fmt!")
-	fmt.Print("a", 111, true)
-	// println("Hello, world!")
+	fmt.Println("a", 111, true)
 
 	// if
 	x := 2
@@ -27,6 +27,6 @@ func main() {
 	case 1, 2:
 		fmt.Println("a is 1 or 2.")
 	default:
-		fmt.Println("defalult.")
+		fmt.Println("default.")
 	}
 }
