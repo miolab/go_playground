@@ -38,6 +38,9 @@ func main() {
 	// for (初期値;継続条件;更新文)
 	for i := 0; i <= 10; i = i + 1 {
 		fmt.Printf("%d\n", i)
+		if i == 8 {
+			break
+		}
 	}
 	// for (range を使う繰り返し)
 	for _, v := range []string{"a", "b", "c"} {
