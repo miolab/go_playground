@@ -46,4 +46,16 @@ func main() {
 	for _, v := range []string{"a", "b", "c"} {
 		fmt.Printf("%s\n", v)
 	}
+	// ラベルを指定しての break
+LOOP:
+	for _, w := range []int{1, 2, 3, 4, 5} {
+		switch {
+		case w == 4:
+			fmt.Printf("%d\n", w)
+			fmt.Println("Now 4 comes, and break loop.")
+			break LOOP
+		default:
+			fmt.Printf("%d\n", w)
+		}
+	}
 }
