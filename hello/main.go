@@ -34,4 +34,28 @@ func main() {
 	default:
 		fmt.Println("default.")
 	}
+
+	// for (初期値;継続条件;更新文)
+	for i := 0; i <= 10; i = i + 1 {
+		fmt.Printf("%d\n", i)
+		if i == 8 {
+			break
+		}
+	}
+	// for (range を使う繰り返し)
+	for _, v := range []string{"a", "b", "c"} {
+		fmt.Printf("%s\n", v)
+	}
+	// ラベルを指定しての break
+LOOP:
+	for _, w := range []int{1, 2, 3, 4, 5} {
+		switch {
+		case w == 4:
+			fmt.Printf("%d\n", w)
+			fmt.Println("Now 4 comes, and break loop.")
+			break LOOP
+		default:
+			fmt.Printf("%d\n", w)
+		}
+	}
 }
