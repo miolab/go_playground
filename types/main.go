@@ -28,5 +28,7 @@ func main() {
 	// スライスリテラルで初期化 (要素数の指定は不要かつ自動で配列が作られる)
 	var arr_4 = []int{100, 200, 300}
 	println(len(arr_4))
-	println(cap(arr_4)) // 容量
+	println(cap(arr_4))        // 容量
+	arr_4 = append(arr_4, 400) // 要素の追加
+	println(cap(arr_4))        // append により容量を超えたら、元の約2倍の容量の配列を確保しなおす
 }
