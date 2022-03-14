@@ -13,4 +13,20 @@ func main() {
 
 	// スライス演算
 	fmt.Println((arr_2[0:2]))
+
+	// スライスの初期化
+	// 長さと容量を指定して初期化 (各要素の初期値はゼロ値となる)
+	var arr_3 []int
+	arr_3 = make([]int, 2, 3)
+	println(len(arr_3))
+	println(arr_3[0])
+	println(arr_3[1])
+	arr_3 = append(arr_3, 1) // 要素の追加
+	println(len(arr_3))
+	println(arr_3[2])
+
+	// スライスリテラルで初期化 (要素数の指定は不要かつ自動で配列が作られる)
+	var arr_4 = []int{100, 200, 300}
+	println(len(arr_4))
+	println(cap(arr_4)) // 容量
 }
