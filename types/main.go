@@ -31,4 +31,21 @@ func main() {
 	println(cap(arr_4))        // 容量
 	arr_4 = append(arr_4, 400) // 要素の追加
 	println(cap(arr_4))        // append により容量を超えたら、元の約2倍の容量の配列を確保しなおす
+
+	// マップ
+	// リテラルで初期化
+	m := map[string]int{"x": 10, "y": 20}
+	println(m["x"])
+
+	// キーを指定して入力
+	m["z"] = 30
+	// 存在確認
+	n, ok := m["z"]
+	println(n, ok)
+
+	// キーを指定して削除
+	delete(m, "z")
+	n_, ok := m["z"]
+	// 削除結果を確認
+	println(n_, ok)
 }
