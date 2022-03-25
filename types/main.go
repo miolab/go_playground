@@ -48,4 +48,18 @@ func main() {
 	n_, ok := m["z"]
 	// 削除結果を確認
 	println(n_, ok)
+
+	// 構造体
+	p := struct {
+		// 型リテラル
+		name string
+		age  int
+	}{
+		// フィールドの値
+		name: "Gopher",
+		age:  10,
+	}
+	// フィールドにアクセスする例
+	p.age++
+	println(p.name, p.age)
 }
