@@ -62,4 +62,36 @@ func main() {
 	// フィールドにアクセスする例
 	p.age++
 	println(p.name, p.age)
+
+	// 定数 (型あり)
+	const n_has_type int = 100
+	println(n_has_type)
+	// 定数 (型なし)
+	const n_has_not_type = 200
+	println(n_has_not_type)
+
+	// グループ化された名前付き定数の定義
+	const (
+		x = 1 + 2
+		// 右辺を省略できる
+		y
+		z
+	)
+	fmt.Println(x, y, z)
+
+	// iota で連続した定数を作る
+	const (
+		a = iota
+		b
+		c
+	)
+	const (
+		// 式の中でも使用可能 (例: シフト演算)
+		d = 1 << iota
+		e
+		f
+		g
+		h
+	)
+	fmt.Println(a, b, c, d, e, f, g, h)
 }
