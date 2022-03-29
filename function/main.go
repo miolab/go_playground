@@ -11,6 +11,16 @@ func main() {
 
 	add_numbers := add(1, 2)
 	println(add_numbers)
+
+	// 多値の受け取り方
+	swap_number_a, swap_number_b := swap(1, 2)
+	println(swap_number_a)
+	println(swap_number_b)
+	// 不要な受け取り値は、ブランク変数で受け取り省略可能
+	swap_number_x, _ := swap(10, 20)
+	_, swap_number_y := swap(10, 20)
+	println(swap_number_x)
+	println(swap_number_y)
 }
 
 func print_hello() {
@@ -23,4 +33,10 @@ func hello() string {
 
 func add(x int, y int) int {
 	return x + y
+}
+
+// 引数の型をまとめて記述できる
+// 複数の戻り値を持たせられる
+func swap(x, y int) (int, int) {
+	return y, x
 }
