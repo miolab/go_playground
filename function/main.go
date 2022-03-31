@@ -21,6 +21,14 @@ func main() {
 	_, swap_number_y := swap(10, 20)
 	println(swap_number_x)
 	println(swap_number_y)
+
+	// 無名関数
+	msg_for_clusure := "テストだよ"
+	// クロージャー
+	func() {
+		println(msg_for_clusure)
+		// 無名関数を定義した直後に()ですぐ呼び出している
+	}()
 }
 
 func print_hello() {
