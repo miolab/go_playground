@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func main() {
 	println("init main")
 
@@ -29,6 +31,19 @@ func main() {
 		println(msg_for_clusure)
 		// 無名関数を定義した直後に()ですぐ呼び出している
 	}()
+
+	// 関数型
+	fs := make([]func() string, 2)
+	// ↑ string 型を返す関数
+	fs[0] = func() string {
+		return "foo"
+	}
+	fs[1] = func() string {
+		return "bar"
+	}
+	for _, f := range fs {
+		fmt.Println(f())
+	}
 }
 
 func print_hello() {
