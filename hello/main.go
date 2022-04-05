@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"rsc.io/quote"
+)
 
 func main() {
 	println("Hello, world!")
@@ -8,6 +12,8 @@ func main() {
 	fmt.Print("Hello, ")
 	fmt.Print("world with fmt!")
 	fmt.Println("a", 111, true)
+
+	fmt.Println("quote:", quote.Go())
 
 	// 書式指定（\n →改行）
 	fmt.Printf("Good morning.\n")
