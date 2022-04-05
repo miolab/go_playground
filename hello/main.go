@@ -13,6 +13,8 @@ func main() {
 	fmt.Print("world with fmt!")
 	fmt.Println("a", 111, true)
 
+	fmt.Println("quote:", quote.Go())
+
 	// 書式指定（\n →改行）
 	fmt.Printf("Good morning.\n")
 	// 書式指定（%d →整数, %s →文字列）
