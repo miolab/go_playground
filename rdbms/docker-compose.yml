@@ -22,5 +22,6 @@ services:
     command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
     restart: always
     volumes:
+      # - ./mysql/db/init:/docker-entrypoint-initdb.d
       - ./mysql/db/data:/var/lib/mysql
 
