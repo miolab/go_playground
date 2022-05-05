@@ -1,18 +1,22 @@
 version: "3"
 services:
   golang:
+    container_name: go_container
     build: ./golang
     tty: true
     volumes:
       - ./golang:/usr/src/golang
-    # links:
-    #   - mysql
+    environment:
+      MYSQL_HOST: mysql_container
+    depends_on:
+      - mysql
   mysql:
+    container_name: mysql_container
     build: ./mysql
     tty: true
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: test_db
+      MYSQL_DATABASE: recordings
       MYSQL_USER: test_user
       MYSQL_PASSWORD: password
       MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
@@ -24,4 +28,3 @@ services:
     volumes:
       # - ./mysql/db/init:/docker-entrypoint-initdb.d
       - ./mysql/db/data:/var/lib/mysql
-
