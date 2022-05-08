@@ -1,5 +1,3 @@
-
-
 DROP TABLE IF EXISTS album;
 
 CREATE TABLE album (
