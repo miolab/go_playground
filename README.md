@@ -1,8 +1,11 @@
-# go_playground
+# Golang playground
 
-**WIP**
+## About
 
-```
-➜  go version
-go version go1.17.7 darwin/amd64
-```
+Golang playground and note for myself.
+
+## Ref
+
+### [go.dev](https://go.dev/)
+
+- Documentation https://go.dev/doc/
