@@ -10,11 +10,22 @@ defaults:
     working-directory: fuzz
 
 jobs:
-  test:
+  setup:
+    strategy:
+      matrix:
+        go-version: [1.18.x]
     runs-on: ubuntu-20.04
     steps:
+      - name: Setup Go
+        uses: actions/setup-go@v3
+        with:
+          go-version: ${{ matrix.go-version }}
+
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Init setup
         run: echo "Init setup..."
+
+      - name: Go test
+        run: go test
