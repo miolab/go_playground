@@ -54,3 +54,28 @@ jobs:
       - name: Go test
         working-directory: fuzz
         run: go test
+  test-example-greetings:
+    name: Test example/greetings
+    runs-on: ubuntu-20.04
+    needs: setup
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Go
+        uses: actions/setup-go@v3
+        with:
+          go-version-file: 'example/greetings/go.mod'
+      - name: Retrieve cached Go setup
+        uses: actions/cache@v3
+        id: cache-golang
+        with:
+          path: |
+            ~/.cache/go-build
+            ~/go/pkg/mod
+          key: |
+            ${{ runner.os }}-go-${{ matrix.go-version }}-${{ hashFiles('**/go.*') }}
+          restore-keys: |
+            ${{ runner.os }}-go-
+      - name: Go test
+        working-directory: example/greetings
+        run: go test
