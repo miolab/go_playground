@@ -31,9 +31,6 @@ jobs:
             ${{ runner.os }}-go-
   test-fuzz:
     name: Test fuzz
-    strategy:
-      matrix:
-        go-version: [1.18.x]
     runs-on: ubuntu-20.04
     needs: setup
     steps:
