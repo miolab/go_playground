@@ -1,4 +1,4 @@
-name: CI for fuzz
+name: Go test
 
 on: push
 
