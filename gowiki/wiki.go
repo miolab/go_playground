@@ -1,10 +1,21 @@
 package main
 
-import "os"
+import (
+	"fmt"
+	"os"
+)
 
 type Page struct {
 	Title string
 	Body  []byte
+}
+
+func main() {
+	p1 := &Page{Title: "TestPage", Body: []byte("This is a simple Page.")}
+	p1.save()
+	p2, _ := loadPage("TestPage")
+
+	fmt.Println(string(p2.Body))
 }
 
 func (p *Page) save() error {
